@@ -1,4 +1,4 @@
-// Loading Screen Controller
+
 let percent = 0;
 let loaderInterval;
 
@@ -18,7 +18,7 @@ function startLoader() {
     }, 20);
 }
 
-// Allow click to skip
+
 document.addEventListener("click", function skipLoader() {
     if (percent < 100) {
         percent = 100;
@@ -32,7 +32,7 @@ document.addEventListener("click", function skipLoader() {
     }
 });
 
-// Start loading when DOM is ready
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', startLoader);
 } else {

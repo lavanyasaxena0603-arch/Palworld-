@@ -1,9 +1,4 @@
-// ========================================
-// PALWORLD ENHANCED INTERACTIONS
-// AAA Gaming Website Experience
-// ========================================
 
-// Sound System
 const sounds = {
     hover: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYLWLHo7qRXGAg+leHww2sgBTGJ0fDTfjMKH3PI8dqOPwkUYbXq7KpYGQlEnuDzvmcwBSh+zPLaizsLVKzl7qRXGAg7ldvwwmkeIU2NhIE='),
     click: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBgoSEg4KFhYKBg4SFhIOGh4WDhIWEgoOEhIOFhoWDhYeFg4SFhYKDhIWDhIWGhYOFhoWDhIWFhIOEhYSDhYaFg4WGhYOEhYWCg4SFg4SFhoWDhYaFg4SFhYSDhIWEg4WGhYOFhoWDhIWFgoOEhYOEhYaFg4WGhYOEhYWEg4SFhIOFhoWDhYaFg4SFhYKDhIWDhIWGhYOFhoWDhIWFhIOEhYSDhYaFg4WGhYOEhYWCg4SFg4Q='),
@@ -12,11 +7,7 @@ const sounds = {
 
 let soundEnabled = true;
 
-// Loading screen is now handled by loader.js
 
-// ========================================
-// INITIALIZE ALL ENHANCEMENTS
-// ========================================
 function initializeEnhancements() {
     initCustomCursor();
     initMouseParticles();
@@ -33,12 +24,10 @@ function initializeEnhancements() {
     initSmoothScroll();
 }
 
-// Initialize after a short delay
+
 setTimeout(initializeEnhancements, 100);
 
-// ========================================
-// CUSTOM CURSOR
-// ========================================
+
 function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
     if (!cursor || window.innerWidth < 768) return;
@@ -65,7 +54,7 @@ function initCustomCursor() {
     }
     animate();
     
-    // Hover effect
+    
     const interactiveElements = document.querySelectorAll('a, button, .feature-card, .download-option');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -78,9 +67,7 @@ function initCustomCursor() {
     });
 }
 
-// ========================================
-// CURSOR SPARKLE PARTICLES
-// ========================================
+
 function initMouseParticles() {
     const particleContainer = document.getElementById('cursor-particles');
     if (!particleContainer || window.innerWidth < 768) return;
@@ -112,9 +99,7 @@ function initMouseParticles() {
     }
 }
 
-// ========================================
-// MOUSE MOVEMENT BACKGROUND SHIFT
-// ========================================
+
 function initBackgroundShift() {
     const bg = document.getElementById('animated-bg');
     if (!bg) return;
@@ -127,9 +112,7 @@ function initBackgroundShift() {
     });
 }
 
-// ========================================
-// VIDEO MODAL
-// ========================================
+
 function initVideoModal() {
     const modal = document.getElementById('video-modal');
     const videoTriggers = document.querySelectorAll('#video-trigger, #play-trailer-btn');
@@ -137,7 +120,7 @@ function initVideoModal() {
     const overlay = document.querySelector('.video-modal-overlay');
     const iframe = document.getElementById('video-iframe');
     
-    const videoURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'; // Replace with actual Palworld trailer
+    const videoURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
     
     videoTriggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
@@ -165,13 +148,11 @@ function initVideoModal() {
     });
 }
 
-// ========================================
-// GSAP ANIMATIONS
-// ========================================
+
 function initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     
-    // Parallax scrolling
+    
     gsap.to('.stars-layer.layer-1', {
         y: 300,
         scrollTrigger: {
@@ -201,8 +182,7 @@ function initGSAPAnimations() {
             scrub: 2
         }
     });
-    
-    // Feature cards animation
+ 
     gsap.from('.feature-card', {
         opacity: 0,
         y: 80,
@@ -215,7 +195,7 @@ function initGSAPAnimations() {
         }
     });
     
-    // Highlight items animation
+    
     gsap.from('.highlight-item', {
         opacity: 0,
         x: -60,
@@ -228,7 +208,7 @@ function initGSAPAnimations() {
         }
     });
     
-    // Download options animation
+
     gsap.from('.download-option', {
         opacity: 0,
         scale: 0.9,
@@ -241,7 +221,7 @@ function initGSAPAnimations() {
         }
     });
     
-    // Section headers animation
+
     gsap.utils.toArray('.section-header').forEach(header => {
         gsap.from(header, {
             opacity: 0,
@@ -256,9 +236,7 @@ function initGSAPAnimations() {
     });
 }
 
-// ========================================
-// REQUIREMENTS TABS
-// ========================================
+
 function initRequirementsTabs() {
     const tabs = document.querySelectorAll('.req-tab');
     const contents = document.querySelectorAll('.req-tab-content');
@@ -277,7 +255,6 @@ function initRequirementsTabs() {
         });
     });
     
-    // Tooltip functionality
     const tooltips = document.querySelectorAll('.tooltip-icon');
     tooltips.forEach(icon => {
         icon.addEventListener('mouseenter', function() {
@@ -316,9 +293,7 @@ function initRequirementsTabs() {
     });
 }
 
-// ========================================
-// PRICE CONVERTER
-// ========================================
+
 function initPriceConverter() {
     const regionSelect = document.getElementById('region-select');
     if (!regionSelect) return;
@@ -347,9 +322,7 @@ function initPriceConverter() {
     });
 }
 
-// ========================================
-// ACCORDION
-// ========================================
+
 function initAccordion() {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     
@@ -378,9 +351,7 @@ function initAccordion() {
     });
 }
 
-// ========================================
-// SOUND TOGGLE
-// ========================================
+
 function initSoundToggle() {
     const soundToggle = document.getElementById('sound-toggle');
     if (!soundToggle) return;
@@ -400,12 +371,10 @@ function playSound(soundName) {
     
     const sound = sounds[soundName].cloneNode();
     sound.volume = 0.2;
-    sound.play().catch(() => {}); // Ignore autoplay restrictions
+    sound.play().catch(() => {});
 }
 
-// ========================================
-// LIVE PLAYER COUNTER
-// ========================================
+
 function initLiveCounter() {
     const statNumber = document.querySelector('.stat-number');
     if (!statNumber) return;
@@ -422,9 +391,7 @@ function initLiveCounter() {
     setInterval(updateCount, 5000);
 }
 
-// ========================================
-// NEWSLETTER FORM
-// ========================================
+
 function initNewsletterForm() {
     const form = document.getElementById('newsletter-form');
     if (!form) return;
@@ -434,7 +401,7 @@ function initNewsletterForm() {
         
         const email = form.querySelector('input').value;
         
-        // Show success message
+   
         showNotification('Thank you for subscribing!', 'success');
         form.querySelector('input').value = '';
         playSound('click');
@@ -466,9 +433,7 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-// ========================================
-// MOBILE MENU
-// ========================================
+
 function initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('nav-menu');
@@ -497,8 +462,7 @@ function initMobileMenu() {
         
         playSound('click');
     });
-    
-    // Close menu when clicking links
+
     menu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth < 768) {
@@ -510,9 +474,7 @@ function initMobileMenu() {
     });
 }
 
-// ========================================
-// SMOOTH SCROLL
-// ========================================
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -535,9 +497,7 @@ function initSmoothScroll() {
     });
 }
 
-// ========================================
-// PAGE TRANSITION (for navigating to new pages)
-// ========================================
+
 document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])').forEach(link => {
     link.addEventListener('click', function(e) {
         if (this.hostname === window.location.hostname && !this.classList.contains('no-transition')) {
@@ -555,7 +515,6 @@ document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])').forEach(l
     });
 });
 
-// Add fade out animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeOut {
@@ -567,9 +526,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ========================================
-// INITIALIZE ON DOM LOAD
-// ========================================
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         console.log('🎮 Palworld Enhanced Experience Loaded!');

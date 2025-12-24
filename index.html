@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download Palworld - The ultimate multiplayer open-world survival crafting game with creature collecting">
+    <title>Palworld Universe - Official Game Download</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+</head>
+<body>
+    
+    <!-- ========================================
+         MAGICAL LOADING SCREEN
+    ======================================== -->
+    <div id="loader" class="loading-screen">
+        <div class="loading-particles"></div>
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-dragon"></i>
+                <h1>PALWORLD</h1>
+            </div>
+            <div class="loading-text">PALWORLD UNIVERSE LOADING...</div>
+            <div class="loading-bar-container">
+                <div id="loader-bar" class="loading-bar"></div>
+            </div>
+            <div id="loader-percent" class="loading-percentage">0%</div>
+            <div class="loading-pal-animations">
+                <div class="pal-silhouette pal-1"><i class="fas fa-dragon"></i></div>
+                <div class="pal-silhouette pal-2"><i class="fas fa-cat"></i></div>
+                <div class="pal-silhouette pal-3"><i class="fas fa-fire"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         CURSOR PARTICLE EFFECTS
+    ======================================== -->
+    <div id="cursor-particles"></div>
+    <div id="custom-cursor" class="custom-cursor">
+        <i class="fas fa-crosshairs"></i>
+    </div>
+
+    <!-- ========================================
+         SOUND TOGGLE CONTROL
+    ======================================== -->
+    <div class="sound-toggle" id="sound-toggle">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- ========================================
+         VIDEO MODAL
+    ======================================== -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-overlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close"><i class="fas fa-times"></i></button>
+            <div class="video-container">
+                <iframe id="video-iframe" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         ANIMATED BACKGROUND WITH STAR FIELD
+    ======================================== -->
+    <div class="animated-bg" id="animated-bg">
+        <div class="stars-layer layer-1"></div>
+        <div class="stars-layer layer-2"></div>
+        <div class="stars-layer layer-3"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="floating-creatures">
+            <div class="creature-silhouette c-1"><i class="fas fa-dragon"></i></div>
+            <div class="creature-silhouette c-2"><i class="fas fa-cat"></i></div>
+            <div class="creature-silhouette c-3"><i class="fas fa-kiwi-bird"></i></div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         STICKY ANIMATED NAVBAR
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-dragon"></i>
+                <span class="brand-text">PALWORLD</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="gameplay-details.html" class="nav-link">Gameplay</a></li>
+                <li><a href="pals-database.html" class="nav-link">Pals Database</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="reviews.html" class="nav-link">Player Ratings</a></li>
+                <li><a href="faq.html" class="nav-link">Help</a></li>
+                <li><a href="#download" class="nav-link btn-nav-download">Download</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION - ENHANCED
+    ======================================== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Award Winning Game 2024</span>
+                </div>
+                <h1 class="hero-title">
+                    Welcome to <span class="gradient-text">PALWORLD</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Embark on an epic adventure in a vast open world filled with mysterious creatures called Pals. 
+                    Build, battle, and survive in the ultimate multiplayer experience.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="10000000">0</h3>
+                            <p>Active Players</p>
+                            <div class="live-ticker">
+                                <i class="fas fa-circle"></i> LIVE
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-content">
+                            <h3>4.8/5</h3>
+                            <p>User Rating</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-content">
+                            <h3>50+</h3>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary gradient-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Download Now</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <button class="btn btn-secondary gradient-btn" id="play-trailer-btn">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Play Trailer</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-gamepad"></i>
+                    <p>Cross-Platform</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-users"></i>
+                    <p>Multiplayer</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-globe"></i>
+                    <p>Open World</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FEATURES SECTION - ENHANCED
+    ======================================== -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">GAME FEATURES</span>
+                <h2 class="section-title">Endless Possibilities Await</h2>
+                <p class="section-description">Discover a world where adventure meets innovation</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-dragon"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Collect Pals</h3>
+                    <p>Discover and collect over 100 unique Pals, each with their own abilities and personalities. Build your perfect team!</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-hammer"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Build & Craft</h3>
+                    <p>Construct massive bases, craft powerful weapons, and create automated production lines with your Pals' help.</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Multiplayer Co-op</h3>
+                    <p>Team up with friends in co-op mode. Build together, raid dungeons, and take on massive boss battles.</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-crosshairs"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Epic Combat</h3>
+                    <p>Engage in thrilling battles with both firearms and Pal abilities. Master strategic combat mechanics.</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Vast Open World</h3>
+                    <p>Explore diverse biomes from lush forests to scorching deserts. Every corner holds secrets to discover.</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                        <div class="icon-particles"></div>
+                    </div>
+                    <h3>Survival Elements</h3>
+                    <p>Hunt, farm, and manage resources to survive. Build sustainable communities with your Pals.</p>
+                    <div class="feature-shine"></div>
+                    <div class="card-border-glow"></div>
+                </div>
+            </div>
+            <div class="features-cta">
+                <a href="gameplay-details.html" class="btn btn-secondary gradient-btn">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Explore Detailed Gameplay</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         BUILD YOUR TEAM SIMULATOR
+    ======================================== -->
+    <section id="team-builder" class="team-builder-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">INTERACTIVE</span>
+                <h2 class="section-title">Build Your Dream Team</h2>
+                <p class="section-description">Choose 5 Pals and see your team stats</p>
+            </div>
+            <div class="team-builder-content">
+                <div class="pal-selection-grid">
+                    <div class="pal-option" data-pal="lamball" data-power="65" data-type="Neutral">
+                        <i class="fas fa-cat"></i>
+                        <h4>Lamball</h4>
+                        <p class="pal-type">Neutral</p>
+                    </div>
+                    <div class="pal-option" data-pal="foxparks" data-power="85" data-type="Fire">
+                        <i class="fas fa-fire"></i>
+                        <h4>Foxparks</h4>
+                        <p class="pal-type">Fire</p>
+                    </div>
+                    <div class="pal-option" data-pal="pengullet" data-power="75" data-type="Water">
+                        <i class="fas fa-tint"></i>
+                        <h4>Pengullet</h4>
+                        <p class="pal-type">Water</p>
+                    </div>
+                    <div class="pal-option" data-pal="cattiva" data-power="70" data-type="Neutral">
+                        <i class="fas fa-paw"></i>
+                        <h4>Cattiva</h4>
+                        <p class="pal-type">Neutral</p>
+                    </div>
+                    <div class="pal-option" data-pal="lifmunk" data-power="80" data-type="Grass">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Lifmunk</h4>
+                        <p class="pal-type">Grass</p>
+                    </div>
+                    <div class="pal-option" data-pal="sparkit" data-power="90" data-type="Electric">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Sparkit</h4>
+                        <p class="pal-type">Electric</p>
+                    </div>
+                    <div class="pal-option" data-pal="chikipi" data-power="60" data-type="Neutral">
+                        <i class="fas fa-egg"></i>
+                        <h4>Chikipi</h4>
+                        <p class="pal-type">Neutral</p>
+                    </div>
+                    <div class="pal-option" data-pal="tanzee" data-power="78" data-type="Grass">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Tanzee</h4>
+                        <p class="pal-type">Grass</p>
+                    </div>
+                </div>
+                <div class="team-display">
+                    <h3>Your Team <span id="team-count">(0/5)</span></h3>
+                    <div class="selected-team" id="selected-team">
+                        <div class="team-slot empty">+</div>
+                        <div class="team-slot empty">+</div>
+                        <div class="team-slot empty">+</div>
+                        <div class="team-slot empty">+</div>
+                        <div class="team-slot empty">+</div>
+                    </div>
+                    <div class="team-stats" id="team-stats">
+                        <div class="stat-row">
+                            <span>Total Power:</span>
+                            <span class="stat-value" id="total-power">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Average Power:</span>
+                            <span class="stat-value" id="avg-power">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Team Balance:</span>
+                            <span class="stat-value" id="team-balance">-</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary gradient-btn" id="reset-team">
+                        <i class="fas fa-redo"></i>
+                        <span>Reset Team</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GAMEPLAY SECTION - ENHANCED
+    ======================================== -->
+    <section id="gameplay" class="gameplay-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">GAMEPLAY</span>
+                <h2 class="section-title">Experience the Adventure</h2>
+                <p class="section-description">Watch what makes Palworld extraordinary</p>
+            </div>
+            <div class="gameplay-content">
+                <div class="gameplay-video">
+                    <div class="video-placeholder" id="video-trigger">
+                        <i class="fas fa-play"></i>
+                        <p>Official Gameplay Trailer</p>
+                        <div class="play-pulse"></div>
+                    </div>
+                </div>
+                <div class="gameplay-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-number">01</div>
+                        <div class="highlight-content">
+                            <h4>Capture & Train</h4>
+                            <p>Catch wild Pals and train them to become powerful allies in your adventure.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">02</div>
+                        <div class="highlight-content">
+                            <h4>Base Building</h4>
+                            <p>Design and construct elaborate bases with automated systems powered by your Pals.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">03</div>
+                        <div class="highlight-content">
+                            <h4>Exploration</h4>
+                            <p>Venture into unknown territories and uncover hidden treasures and rare Pals.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">04</div>
+                        <div class="highlight-content">
+                            <h4>Multiplayer Raids</h4>
+                            <p>Join forces with friends to tackle challenging dungeons and legendary bosses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SYSTEM REQUIREMENTS - ENHANCED WITH TABS
+    ======================================== -->
+    <section id="requirements" class="requirements-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">TECH SPECS</span>
+                <h2 class="section-title">System Requirements</h2>
+                <p class="section-description">Make sure your system is ready for the adventure</p>
+            </div>
+            
+            <div class="requirements-tabs">
+                <button class="req-tab active" data-tab="minimum">Minimum</button>
+                <button class="req-tab" data-tab="recommended">Recommended</button>
+                <button class="req-tab" data-tab="ultra">Ultra 4K</button>
+            </div>
+
+            <div class="requirements-content">
+                <div class="req-tab-content active" id="minimum">
+                    <div class="requirement-card glassmorphism">
+                        <div class="requirement-header">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Minimum Requirements</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>
+                                <span class="req-label">OS:</span>
+                                <span class="req-value">Windows 10 (64-bit)</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Minimum operating system"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Processor:</span>
+                                <span class="req-value">Intel Core i5-3570K / AMD Ryzen 5 1600</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="CPU requirements"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Memory:</span>
+                                <span class="req-value">16 GB RAM</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="System memory needed"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Graphics:</span>
+                                <span class="req-value">NVIDIA GTX 1050 / AMD RX 560</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="GPU requirements"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">DirectX:</span>
+                                <span class="req-value">Version 11</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Storage:</span>
+                                <span class="req-value">40 GB available space</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Network:</span>
+                                <span class="req-value">Broadband Internet connection</span>
+                            </li>
+                        </ul>
+                        <div class="performance-badge">
+                            <i class="fas fa-gauge"></i>
+                            <span>30-45 FPS @ 1080p Low</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="req-tab-content" id="recommended">
+                    <div class="requirement-card glassmorphism recommended">
+                        <div class="requirement-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Recommended Requirements</h3>
+                            <span class="recommended-badge">Best Experience</span>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>
+                                <span class="req-label">OS:</span>
+                                <span class="req-value">Windows 10/11 (64-bit)</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Recommended OS"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Processor:</span>
+                                <span class="req-value">Intel Core i7-8700K / AMD Ryzen 7 3700X</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Optimal CPU"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Memory:</span>
+                                <span class="req-value">32 GB RAM</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Recommended memory"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Graphics:</span>
+                                <span class="req-value">NVIDIA RTX 2070 / AMD RX 5700 XT</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Optimal GPU"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">DirectX:</span>
+                                <span class="req-value">Version 12</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Storage:</span>
+                                <span class="req-value">40 GB SSD</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Network:</span>
+                                <span class="req-value">Broadband Internet connection</span>
+                            </li>
+                        </ul>
+                        <div class="performance-badge recommended">
+                            <i class="fas fa-gauge-high"></i>
+                            <span>60+ FPS @ 1440p High</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="req-tab-content" id="ultra">
+                    <div class="requirement-card glassmorphism ultra">
+                        <div class="requirement-header">
+                            <i class="fas fa-crown"></i>
+                            <h3>Ultra 4K Requirements</h3>
+                            <span class="ultra-badge">Maximum Quality</span>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>
+                                <span class="req-label">OS:</span>
+                                <span class="req-value">Windows 11 (64-bit)</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Latest OS"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Processor:</span>
+                                <span class="req-value">Intel Core i9-12900K / AMD Ryzen 9 5950X</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="High-end CPU"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Memory:</span>
+                                <span class="req-value">64 GB RAM</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Maximum memory"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">Graphics:</span>
+                                <span class="req-value">NVIDIA RTX 4080 / AMD RX 7900 XTX</span>
+                                <i class="fas fa-info-circle tooltip-icon" data-tooltip="Top-tier GPU"></i>
+                            </li>
+                            <li>
+                                <span class="req-label">DirectX:</span>
+                                <span class="req-value">Version 12 Ultimate</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Storage:</span>
+                                <span class="req-value">40 GB NVMe SSD</span>
+                            </li>
+                            <li>
+                                <span class="req-label">Network:</span>
+                                <span class="req-value">High-speed Internet (100+ Mbps)</span>
+                            </li>
+                        </ul>
+                        <div class="performance-badge ultra">
+                            <i class="fas fa-rocket"></i>
+                            <span>120+ FPS @ 4K Ultra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-support glassmorphism">
+                <h4>Available Platforms</h4>
+                <div class="platform-icons">
+                    <div class="platform-item">
+                        <i class="fab fa-windows"></i>
+                        <span>Windows</span>
+                    </div>
+                    <div class="platform-item">
+                        <i class="fab fa-steam"></i>
+                        <span>Steam</span>
+                    </div>
+                    <div class="platform-item">
+                        <i class="fab fa-xbox"></i>
+                        <span>Xbox</span>
+                    </div>
+                    <div class="platform-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Game Pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         DOWNLOAD SECTION - ENHANCED
+    ======================================== -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-card glassmorphism">
+                <div class="download-content">
+                    <div class="download-header">
+                        <i class="fas fa-download"></i>
+                        <h2>Ready to Start Your Adventure?</h2>
+                        <p>Download Palworld now and join millions of players worldwide</p>
+                    </div>
+
+                    <!-- Region Price Converter -->
+                    <div class="price-converter">
+                        <label for="region-select">
+                            <i class="fas fa-globe"></i> Select Your Region:
+                        </label>
+                        <select id="region-select" class="region-selector">
+                            <option value="USD">USD - United States</option>
+                            <option value="EUR">EUR - Europe</option>
+                            <option value="GBP">GBP - United Kingdom</option>
+                            <option value="JPY">JPY - Japan</option>
+                            <option value="CNY">CNY - China</option>
+                            <option value="AUD">AUD - Australia</option>
+                        </select>
+                    </div>
+
+                    <div class="download-options">
+                        <div class="download-option glassmorphism">
+                            <div class="option-header">
+                                <i class="fab fa-steam"></i>
+                                <h3>Steam</h3>
+                            </div>
+                            <div class="option-details">
+                                <p class="price" data-price="29.99">$29.99</p>
+                                <p class="size">Download Size: 40 GB</p>
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> Cloud Saves</li>
+                                    <li><i class="fas fa-check"></i> Achievements</li>
+                                    <li><i class="fas fa-check"></i> Trading Cards</li>
+                                </ul>
+                            </div>
+                            <a href="https://store.steampowered.com" target="_blank" class="btn btn-primary download-btn gradient-btn">
+                                <i class="fab fa-steam"></i>
+                                <span>Download on Steam</span>
+                                <div class="btn-glow"></div>
+                            </a>
+                        </div>
+                        <div class="download-option glassmorphism featured">
+                            <div class="featured-badge">Most Popular</div>
+                            <div class="option-header">
+                                <i class="fab fa-windows"></i>
+                                <h3>Direct Download</h3>
+                            </div>
+                            <div class="option-details">
+                                <p class="price" data-price="29.99">$29.99</p>
+                                <p class="size">Download Size: 40 GB</p>
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> No DRM</li>
+                                    <li><i class="fas fa-check"></i> Instant Access</li>
+                                    <li><i class="fas fa-check"></i> Lifetime Updates</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary download-btn gradient-btn">
+                                <i class="fas fa-download"></i>
+                                <span>Download for Windows</span>
+                                <div class="btn-glow"></div>
+                            </button>
+                        </div>
+                        <div class="download-option glassmorphism">
+                            <div class="option-header">
+                                <i class="fab fa-xbox"></i>
+                                <h3>Xbox Game Pass</h3>
+                            </div>
+                            <div class="option-details">
+                                <p class="price">Free with Game Pass</p>
+                                <p class="size">Download Size: 40 GB</p>
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> Day One Access</li>
+                                    <li><i class="fas fa-check"></i> Cross-Save</li>
+                                    <li><i class="fas fa-check"></i> 100+ Games</li>
+                                </ul>
+                            </div>
+                            <a href="https://www.xbox.com/xbox-game-pass" target="_blank" class="btn btn-primary download-btn gradient-btn">
+                                <i class="fab fa-xbox"></i>
+                                <span>Get on Xbox</span>
+                                <div class="btn-glow"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Platform Comparison Chart -->
+                    <div class="comparison-chart">
+                        <h3><i class="fas fa-chart-bar"></i> Platform Comparison</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th><i class="fab fa-steam"></i> Steam</th>
+                                    <th><i class="fab fa-windows"></i> Direct</th>
+                                    <th><i class="fab fa-xbox"></i> Xbox</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cloud Saves</td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-times text-danger"></i></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Achievements</td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-times text-danger"></i></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Auto-Updates</td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Modding Support</td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td><i class="fas fa-times text-danger"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Installation Guide Accordion -->
+                    <div class="installation-guide">
+                        <h3><i class="fas fa-book"></i> Installation Guide</h3>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span><i class="fas fa-chevron-right"></i> Step 1: Download the Game</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Click on your preferred platform download button above. The installer will start downloading automatically.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span><i class="fas fa-chevron-right"></i> Step 2: Run the Installer</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Once downloaded, run the installer file. Choose your installation directory and click "Install".</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span><i class="fas fa-chevron-right"></i> Step 3: Launch and Play</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>After installation, launch Palworld from your desktop or Start menu. Create your account and start your adventure!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-info">
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Download</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-sync"></i>
+                            <span>Auto-Updates</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-shield-check"></i>
+                            <span>Purchase Protection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER - ENHANCED
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-dragon"></i>
+                        <span>PALWORLD</span>
+                    </div>
+                    <p>Experience the ultimate adventure in a world filled with mysterious creatures and endless possibilities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" data-tooltip="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" data-tooltip="Twitch"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="social-link" data-tooltip="Reddit"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gameplay-details.html">Gameplay Details</a></li>
+                        <li><a href="pals-database.html">Pals Database</a></li>
+                        <li><a href="gallery.html">Community Gallery</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">Help Center & FAQ</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Bug Report</a></li>
+                        <li><a href="faq.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">EULA</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Get the latest updates and news</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="country-selector">
+                        <select>
+                            <option>🌍 Global</option>
+                            <option>🇺🇸 United States</option>
+                            <option>🇬🇧 United Kingdom</option>
+                            <option>🇯🇵 Japan</option>
+                            <option>🇨🇳 China</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Palworld Universe. All rights reserved. This is an enhanced demo website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/enhancements.js"></script>
+    <script src="js/team-builder.js"></script>
+</body>
+</html>

@@ -1,7 +1,4 @@
-// ========================================
-// BUILD YOUR TEAM SIMULATOR
-// Interactive Pal Team Builder
-// ========================================
+
 
 class TeamBuilder {
     constructor() {
@@ -41,26 +38,25 @@ class TeamBuilder {
             displayName: option.querySelector('h4').textContent
         };
         
-        // Check if team is full
+
         if (this.selectedPals.length >= this.maxTeamSize) {
             this.showMessage('Team is full! Remove a Pal first.', 'warning');
             return;
         }
-        
-        // Check if already selected
+   
         if (this.selectedPals.some(p => p.name === palData.name)) {
             this.showMessage('This Pal is already in your team!', 'warning');
             return;
         }
         
-        // Add to team
+      
         this.selectedPals.push(palData);
         this.updateTeamDisplay();
         this.updateTeamStats();
         this.playSelectAnimation(option);
         this.showMessage(`${palData.displayName} joined your team!`, 'success');
         
-        // Play sound effect
+   
         if (typeof playSound === 'function') {
             playSound('click');
         }
@@ -113,7 +109,7 @@ class TeamBuilder {
         document.getElementById('total-power').textContent = totalPower;
         document.getElementById('avg-power').textContent = avgPower;
         
-        // Calculate team balance
+        
         const balance = this.calculateBalance();
         document.getElementById('team-balance').textContent = balance;
     }
@@ -192,7 +188,7 @@ class TeamBuilder {
     }
 }
 
-// Add animations
+
 const style = document.createElement('style');
 style.textContent = `
     .team-slot {
@@ -423,7 +419,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize Team Builder when DOM is ready
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         if (document.querySelector('.team-builder-section')) {

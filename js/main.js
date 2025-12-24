@@ -1,13 +1,11 @@
-// ========================================
-// Navbar Scroll Effect
-// ========================================
+
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    // Add/remove scrolled class
+    
     if (currentScroll > 100) {
         navbar.classList.add('scrolled');
     } else {
@@ -17,22 +15,19 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ========================================
-// Smooth Scroll for Navigation Links
-// ========================================
+
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         
-        // Remove active class from all links
+ 
         navLinks.forEach(l => l.classList.remove('active'));
         
-        // Add active class to clicked link
+     
         link.classList.add('active');
-        
-        // Get target section
+
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
         
@@ -47,9 +42,6 @@ navLinks.forEach(link => {
     });
 });
 
-// ========================================
-// Mobile Menu Toggle
-// ========================================
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -71,9 +63,7 @@ if (mobileMenuToggle) {
     });
 }
 
-// ========================================
-// Scroll Reveal Animation
-// ========================================
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -88,7 +78,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all feature cards
+
 const featureCards = document.querySelectorAll('.feature-card');
 featureCards.forEach((card, index) => {
     card.style.opacity = '0';
@@ -97,7 +87,7 @@ featureCards.forEach((card, index) => {
     observer.observe(card);
 });
 
-// Observe gameplay highlights
+
 const highlightItems = document.querySelectorAll('.highlight-item');
 highlightItems.forEach((item, index) => {
     item.style.opacity = '0';
@@ -106,7 +96,7 @@ highlightItems.forEach((item, index) => {
     observer.observe(item);
 });
 
-// Observe requirement cards
+
 const requirementCards = document.querySelectorAll('.requirement-card');
 requirementCards.forEach((card, index) => {
     card.style.opacity = '0';
@@ -115,7 +105,7 @@ requirementCards.forEach((card, index) => {
     observer.observe(card);
 });
 
-// Observe download options
+
 const downloadOptions = document.querySelectorAll('.download-option');
 downloadOptions.forEach((option, index) => {
     option.style.opacity = '0';
@@ -124,9 +114,7 @@ downloadOptions.forEach((option, index) => {
     observer.observe(option);
 });
 
-// ========================================
-// Stat Counter Animation
-// ========================================
+
 const animateValue = (element, start, end, duration, suffix = '') => {
     const range = end - start;
     const increment = range / (duration / 16);
@@ -164,35 +152,30 @@ const statObserver = new IntersectionObserver((entries) => {
 const statItems = document.querySelectorAll('.stat-item');
 statItems.forEach(item => statObserver.observe(item));
 
-// ========================================
-// Video Placeholder Click Handler
-// ========================================
+
 const videoPlaceholder = document.querySelector('.video-placeholder');
 if (videoPlaceholder) {
     videoPlaceholder.addEventListener('click', () => {
-        // Create a pulse effect
+   
         videoPlaceholder.style.transform = 'scale(0.98)';
         setTimeout(() => {
             videoPlaceholder.style.transform = 'scale(1)';
         }, 100);
         
-        // In a real scenario, this would open a video modal or embed
+    
         console.log('Video clicked - Would open video player');
     });
 }
 
-// ========================================
-// Download Button Click Handlers
-// ========================================
 const downloadButtons = document.querySelectorAll('.download-btn');
 downloadButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         
-        // Get the platform from the button text
+    
         const platform = button.querySelector('span').textContent;
         
-        // Create ripple effect
+
         const ripple = document.createElement('span');
         ripple.style.position = 'absolute';
         ripple.style.width = '20px';
@@ -211,19 +194,16 @@ downloadButtons.forEach(button => {
         
         setTimeout(() => ripple.remove(), 600);
         
-        // Show notification
+
         showNotification(`Initiating download for ${platform}...`);
         
-        // In a real scenario, this would trigger the actual download
+ 
         console.log(`Download initiated for: ${platform}`);
     });
 });
 
-// ========================================
-// Notification System
-// ========================================
 function showNotification(message) {
-    // Create notification element
+
     const notification = document.createElement('div');
     notification.style.position = 'fixed';
     notification.style.top = '100px';
@@ -240,27 +220,27 @@ function showNotification(message) {
     notification.style.gap = '10px';
     notification.style.fontWeight = '500';
     
-    // Add icon
+
     const icon = document.createElement('i');
     icon.className = 'fas fa-check-circle';
     icon.style.fontSize = '20px';
     notification.appendChild(icon);
     
-    // Add message
+
     const text = document.createElement('span');
     text.textContent = message;
     notification.appendChild(text);
     
     document.body.appendChild(notification);
     
-    // Remove after 3 seconds
+
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease-out';
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
 
-// Add animation styles
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
@@ -294,13 +274,11 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ========================================
-// Scroll to Top on Page Load
-// ========================================
+
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
     
-    // Animate hero content on load
+
     const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
         heroContent.style.opacity = '0';
@@ -313,7 +291,7 @@ window.addEventListener('load', () => {
         }, 100);
     }
     
-    // Animate floating cards
+
     const floatingCards = document.querySelectorAll('.floating-card');
     floatingCards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -327,9 +305,7 @@ window.addEventListener('load', () => {
     });
 });
 
-// ========================================
-// Active Section Highlighting
-// ========================================
+
 const sections = document.querySelectorAll('section[id]');
 
 const highlightNav = () => {
@@ -353,9 +329,7 @@ const highlightNav = () => {
 
 window.addEventListener('scroll', highlightNav);
 
-// ========================================
-// Parallax Effect for Hero Section
-// ========================================
+
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroImage = document.querySelector('.hero-image');
@@ -365,28 +339,23 @@ window.addEventListener('scroll', () => {
         heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
     
-    // Parallax particles
+
     particles.forEach((particle, index) => {
         const speed = (index + 1) * 0.1;
         particle.style.transform = `translate(${scrolled * speed}px, ${scrolled * speed}px)`;
     });
 });
 
-// ========================================
-// Add Hover Sound Effect (Optional)
-// ========================================
+
 const interactiveElements = document.querySelectorAll('.btn, .feature-card, .download-option');
 interactiveElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
-        // Visual feedback
+        
         element.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
     });
 });
 
-// ========================================
-// Performance Optimization
-// ========================================
-// Debounce function for scroll events
+
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -399,11 +368,11 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debounce to scroll handlers
+
 const debouncedHighlightNav = debounce(highlightNav, 50);
 window.removeEventListener('scroll', highlightNav);
 window.addEventListener('scroll', debouncedHighlightNav);
 
-// Integrated with enhancements.js for full functionality
+
 console.log('🎮 Palworld Core Features Loaded!');
 console.log('💫 Enhanced features loading...');
